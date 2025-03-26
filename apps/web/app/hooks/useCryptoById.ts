@@ -21,7 +21,9 @@ interface CryptoDetail {
 }
 
 const fetchCryptoById = async (id: string): Promise<CryptoDetail> => {
-	const { data } = await axios.get(`${API_URL}/coins/${id}`);
+	const { data } = await axios.get(
+		`${API_URL}/coins/${id}/?vs_currency=$usd&sparkline=true`
+	);
 	return data;
 };
 
