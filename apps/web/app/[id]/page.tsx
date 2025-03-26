@@ -303,25 +303,25 @@ export default function CryptoDetailPage({ params }: { params: { id: string } })
 								<div>
 									<p className='text-sm text-muted-foreground'>Market Cap</p>
 									<p className='font-medium'>
-										{formatNumber(data?.market_data?.market_cap)}
+										{formatNumber(data?.market_data?.market_cap?.usd)}
 									</p>
 								</div>
 								<div>
 									<p className='text-sm text-muted-foreground'>24h Volume</p>
 									<p className='font-medium'>
-										{formatNumber(data?.market_data?.total_volume)}
+										{formatNumber(data?.market_data?.total_volume?.usd)}
 									</p>
 								</div>
 								<div>
 									<p className='text-sm text-muted-foreground'>24h High</p>
 									<p className='font-medium'>
-										${data?.market_data?.high_24h.toLocaleString()}
+										${data?.market_data?.high_24h?.usd.toLocaleString()}
 									</p>
 								</div>
 								<div>
 									<p className='text-sm text-muted-foreground'>24h Low</p>
 									<p className='font-medium'>
-										${data?.market_data?.low_24h.toLocaleString()}
+										${data?.market_data?.low_24h?.usd.toLocaleString()}
 									</p>
 								</div>
 							</div>
@@ -364,7 +364,7 @@ export default function CryptoDetailPage({ params }: { params: { id: string } })
 									<p className='text-sm text-muted-foreground'>All Time High</p>
 									<div className='text-right'>
 										<p className='font-medium'>
-											${data?.market_data?.ath.toLocaleString()}
+											${data?.market_data?.ath?.usd.toLocaleString()}
 										</p>
 										<p className='text-xs text-muted-foreground'>
 											{formatDate(data?.market_data?.ath_date)}
@@ -375,7 +375,7 @@ export default function CryptoDetailPage({ params }: { params: { id: string } })
 									<p className='text-sm text-muted-foreground'>All Time Low</p>
 									<div className='text-right'>
 										<p className='font-medium'>
-											${data?.market_data?.atl.toLocaleString()}
+											${data?.market_data?.atl?.usd.toLocaleString()}
 										</p>
 										<p className='text-xs text-muted-foreground'>
 											{formatDate(data?.market_data?.atl_date)}
@@ -385,17 +385,17 @@ export default function CryptoDetailPage({ params }: { params: { id: string } })
 								<div className='flex items-center justify-between'>
 									<p className='text-sm text-muted-foreground'>From ATH</p>
 									<p
-										className={`text-sm font-medium ${data?.market_data?.ath_change_percentage >= 0 ? "text-green-500" : "text-red-500"}`}
+										className={`text-sm font-medium ${data?.market_data?.ath_change_percentage?.usd >= 0 ? "text-green-500" : "text-red-500"}`}
 									>
-										{formatPercentage(data?.market_data?.ath_change_percentage)}
+										{formatPercentage(data?.market_data?.ath_change_percentage?.usd)}
 									</p>
 								</div>
 								<div className='flex items-center justify-between'>
 									<p className='text-sm text-muted-foreground'>From ATL</p>
 									<p
-										className={`text-sm font-medium ${data?.market_data?.atl_change_percentage >= 0 ? "text-green-500" : "text-red-500"}`}
+										className={`text-sm font-medium ${data?.market_data?.atl_change_percentage?.usd >= 0 ? "text-green-500" : "text-red-500"}`}
 									>
-										{formatPercentage(data?.market_data?.atl_change_percentage)}
+										{formatPercentage(data?.market_data?.atl_change_percentage?.usd)}
 									</p>
 								</div>
 							</div>
